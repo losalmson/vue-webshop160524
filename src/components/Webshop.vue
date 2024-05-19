@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
+import { IProduct } from '../models/IProduct';
+import { getProducts } from '../services /productService';
 
 const state = ref<IWebshopState>
 
@@ -7,6 +9,9 @@ const state = ref<IWebshopState>
         products: IProduct [];
     };
 
+onMounted(async () => {
+    state.value.products = await getProducts();
+})
 </script>
 
 <template>
