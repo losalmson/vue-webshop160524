@@ -9,7 +9,13 @@ interface ProductsProp{
 </script>
 
 <template>
-    <Product />
+    <section class="products">
+    <Product 
+    v-for="product in products"
+    :product="product"
+    :key="product.id"
+    />
+    </section>
 </template>
 
 <style scoped>

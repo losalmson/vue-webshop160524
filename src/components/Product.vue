@@ -7,6 +7,7 @@ interface ProductProps {
 
 defineProps<ProductProps>();
 
+
 </script>
 
 <template>
